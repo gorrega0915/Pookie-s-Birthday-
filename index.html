@@ -1,28 +1,704 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday Pookie 💛</title>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday, Pookie 💛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #fff7f9;
-      padding: 50px;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #ffe6f2, #0b1020 55%);
+      color: #fdfdfd;
+      min-height: 100vh;
     }
-    h1 {
-      color: #ff77a9;
-      font-size: 48px;
+
+    /* Navegación */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(5, 8, 20, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
     }
+
+    nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 18px;
+      color: #ffd974;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 14px;
+    }
+
+    .nav-links button {
+      background: transparent;
+      border: 1px solid transparent;
+      color: #f7f7f7;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 999px;
+      transition: 0.2s;
+      font-size: 13px;
+    }
+
+    .nav-links button:hover {
+      border-color: #ff9ecf;
+      background: rgba(255, 158, 207, 0.1);
+    }
+
+    /* Secciones generales */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 90px 16px 40px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
     p {
-      color: #444;
-      font-size: 20px;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .hero-title span {
+      color: #ff9ecf;
+    }
+
+    .hero-subtitle {
+      margin-top: 10px;
+      color: #f0e4ff;
+    }
+
+    .hero-buttons {
       margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff9ecf, #ffd974);
+      border: none;
+      color: #161321;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 0 18px rgba(255, 158, 207, 0.6);
+      transition: 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 0 28px rgba(255, 158, 207, 0.9);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-radius: 999px;
+      padding: 10px 18px;
+      border: 1px solid #ff9ecf;
+      color: #ff9ecf;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 158, 207, 0.1);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, #1d1530, #090b18);
+      border-radius: 24px;
+      padding: 18px 18px 20px;
+      box-shadow: 0 0 28px rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #b2b2ff;
+      margin-bottom: 6px;
+    }
+
+    .terminal {
+      background: #05070f;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .dot.red { background: #ff5f57; }
+    .dot.yellow { background: #febc2e; }
+    .dot.green { background: #28c840; }
+
+    .terminal-title {
+      font-size: 11px;
+      color: #888;
+      margin-left: 6px;
+    }
+
+    .terminal-body {
+      color: #e6fff7;
+      min-height: 80px;
+    }
+
+    .prompt {
+      color: #8be9fd;
+    }
+
+    .cmd {
+      color: #50fa7b;
+    }
+
+    .caret {
+      display: inline-block;
+      width: 8px;
+      background: #f8f8f2;
+      margin-left: 2px;
+      animation: blink 1s step-start infinite;
+      height: 13px;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .floating-heart {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background: radial-gradient(circle at 30% 30%, #ffe6f2, #ff4b8e);
+      transform: rotate(-45deg);
+      right: 16px;
+      top: 14px;
+      animation: float 4s ease-in-out infinite;
+      opacity: 0.8;
+    }
+
+    .floating-heart::before,
+    .floating-heart::after {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background: radial-gradient(circle at 30% 30%, #ffe6f2, #ff4b8e);
+      border-radius: 50%;
+    }
+
+    .floating-heart::before {
+      top: -11px;
+      left: 0;
+    }
+
+    .floating-heart::after {
+      left: 11px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(-45deg);
+      }
+      50% {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+      100% {
+        transform: translateY(0) rotate(-45deg);
+      }
+    }
+
+    /* Timeline */
+    .timeline {
+      display: grid;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .timeline-item {
+      background: rgba(10, 12, 30, 0.85);
+      border-radius: 16px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .timeline-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffbde0;
+      margin-bottom: 4px;
+    }
+
+    .timeline-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .timeline-text {
+      font-size: 13px;
+      color: #f4f4ff;
+    }
+
+    /* Cartas secretas */
+    .cards-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 14px;
+    }
+
+    .secret-card {
+      position: relative;
+      border-radius: 18px;
+      padding: 16px 16px 46px;
+      background: radial-gradient(circle at top left, #ff9ecf15, #090b18);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .secret-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
+    }
+
+    .secret-label {
+      font-size: 11px;
+      color: #ffc8ff;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .secret-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .secret-text {
+      font-size: 13px;
+      color: #f8f8ff;
+    }
+
+    .secret-reveal {
+      position: absolute;
+      bottom: 10px;
+      right: 14px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ff9ecf;
+      opacity: 0.85;
+    }
+
+    /* Juego simple */
+    .game-box {
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top, #1a2238, #060712);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center;
+    }
+
+    .game-hearts-area {
+      margin-top: 14px;
+      min-height: 120px;
+      border-radius: 12px;
+      border: 1px dashed rgba(255, 255, 255, 0.24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .game-heart {
+      width: 26px;
+      height: 26px;
+      background: radial-gradient(circle at 30% 30%, #ffe6f2, #ff4b8e);
+      transform: rotate(-45deg);
+      position: relative;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .game-heart::before,
+    .game-heart::after {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background: radial-gradient(circle at 30% 30%, #ffe6f2, #ff4b8e);
+      border-radius: 50%;
+    }
+
+    .game-heart::before {
+      top: -13px;
+      left: 0;
+    }
+
+    .game-heart::after {
+      left: 13px;
+      top: 0;
+    }
+
+    .game-heart:hover {
+      transform: rotate(-45deg) scale(1.12);
+    }
+
+    .game-message {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ffdeff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 11px;
+      padding-bottom: 22px;
+      color: #c5c6ff;
+    }
+
+    footer span {
+      color: #ff9ecf;
+    }
+
+    /* Responsivo */
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      main {
+        padding-top: 80px;
+      }
+
+      .hero-title {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Hi my love 💛</h1>
-  <p>This is the beginning of something I made for you…</p>
+  <header>
+    <nav>
+      <div class="logo-text">for pookie.dev 💛</div>
+      <div class="nav-links">
+        <button onclick="scrollToSection('inicio')">Inicio</button>
+        <button onclick="scrollToSection('timeline')">Nuestra historia</button>
+        <button onclick="scrollToSection('secretos')">Secretos</button>
+        <button onclick="scrollToSection('juego')">Mini juego</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Inicio -->
+    <section id="inicio">
+      <div class="hero">
+        <div>
+          <h1 class="hero-title">
+            Happy birthday, <span>Pookie</span> 🎂
+          </h1>
+          <p class="hero-subtitle">
+            Esta es una pequeña web app hecha con mucho amor, algo muy mío para ti.  
+            Aquí viven recuerdos, mensajes y algunas sorpresas que solo tú puedes descubrir.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn-primary" onclick="scrollToSection('timeline')">
+              Ver nuestra línea del tiempo 💫
+            </button>
+            <button class="btn-ghost" onclick="revealSurprise()">
+              Ejecutar comando secreto
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-label">terminal - pookie_birthday.sh</div>
+          <div class="terminal">
+            <div class="terminal-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <div class="terminal-title">bash • love-terminal</div>
+            </div>
+            <div class="terminal-body" id="terminalText">
+              <span class="prompt">pookie@love-shell</span>:<span class="cmd">~$</span>
+              <span id="typed"></span><span class="caret"></span>
+            </div>
+          </div>
+          <div class="floating-heart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline">
+      <h2>Nuestra pequeña gran historia ✨</h2>
+      <p>
+        Esta línea del tiempo es solo un resumen. Hay muchos detalles que se quedan entre tú, yo y nuestros recuerdos.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-tag">Nivel 1</div>
+          <div class="timeline-title">Cuando te conocí</div>
+          <div class="timeline-text">
+            Aquí puedes escribir cómo se conocieron, lo que sentiste, algo gracioso o un detalle que nunca le hayas contado.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-tag">Nivel 2</div>
+          <div class="timeline-title">Primer momento en el que dije: ok, ya me gustas</div>
+          <div class="timeline-text">
+            Describe ese momento exacto o esa mezcla de días donde te diste cuenta de que ya no era solo alguien más.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-tag">Nivel 3</div>
+          <div class="timeline-title">Un recuerdo que siempre quiero guardar</div>
+          <div class="timeline-text">
+            Puede ser un viaje, una llamada, una plática larga, una tontería que los hizo reír mucho. Algo muy de ustedes.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-tag">Loading...</div>
+          <div class="timeline-title">Todo lo que falta por vivir</div>
+          <div class="timeline-text">
+            Plano a futuro. Cosas que te gustaría hacer con él, sueños, viajes, metas o incluso planes sencillos del día a día.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secretos -->
+    <section id="secretos">
+      <h2>Cartas secretas para ti 💌</h2>
+      <p>
+        Estas cartas no están en papel, pero están igual de escritas para ti. Haz click en cada una.
+      </p>
+
+      <div class="cards-grid">
+        <div class="secret-card" onclick="toggleSecret(this)">
+          <div class="secret-label">Mensaje 01</div>
+          <div class="secret-title">Lo que más admiro de ti</div>
+          <p class="secret-text" data-hidden="true">
+            Aquí escribe las cosas que más admiras de él: su forma de pensar, cómo trabaja, cómo te cuida, cómo ve el mundo.
+          </p>
+          <div class="secret-reveal">Click para leer</div>
+        </div>
+
+        <div class="secret-card" onclick="toggleSecret(this)">
+          <div class="secret-label">Mensaje 02</div>
+          <div class="secret-title">Gracias por...</div>
+          <p class="secret-text" data-hidden="true">
+            Agradece cosas específicas. Momentos donde te sostuvo, te escuchó, te hizo reír, te tuvo paciencia.
+          </p>
+          <div class="secret-reveal">Click para leer</div>
+        </div>
+
+        <div class="secret-card" onclick="toggleSecret(this)">
+          <div class="secret-label">Mensaje 03</div>
+          <div class="secret-title">Si esto fuera código</div>
+          <p class="secret-text" data-hidden="true">
+            Puedes escribir algo tipo: if (tengo_miedo) { tú = mi_lugar_seguro; }  
+            o cualquier metáfora geek/romántica que lo haga sonreír.
+          </p>
+          <div class="secret-reveal">Click para leer</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Juego -->
+    <section id="juego">
+      <h2>Mini juego de corazones ❤️</h2>
+      <p>
+        Haz click en los corazones hasta desbloquear el mensaje oculto.
+      </p>
+
+      <div class="game-box">
+        <button class="btn-primary" onclick="startGame()">
+          Empezar juego
+        </button>
+        <div class="game-hearts-area" id="heartsArea">
+          <span style="font-size:13px; color:#c7ccff;">
+            Aquí aparecerán los corazones cuando empiece el juego.
+          </span>
+        </div>
+        <div class="game-message" id="gameMessage"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Hecho con <span>mucho amor</span> y un poquito de código para ti.  
+  </footer>
+
+  <script>
+    // Scroll suave
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({
+        top: el.offsetTop - 70,
+        behavior: "smooth"
+      });
+    }
+
+    // Terminal - typewriter
+    const text = "running: celebrate_pookie_birthday();   status: ok   output: i love you.";
+    const typedEl = document.getElementById("typed");
+    let index = 0;
+
+    function typeText() {
+      if (!typedEl) return;
+      if (index <= text.length) {
+        typedEl.textContent = text.slice(0, index);
+        index++;
+        setTimeout(typeText, 60);
+      }
+    }
+    typeText();
+
+    function revealSurprise() {
+      alert("Comando ejecutado correctamente: hoy solo existes tú. 💛");
+    }
+
+    // Cartas secretas
+    function toggleSecret(card) {
+      const text = card.querySelector(".secret-text");
+      const label = card.querySelector(".secret-reveal");
+      const hidden = text.getAttribute("data-hidden") === "true";
+
+      if (hidden) {
+        text.style.filter = "blur(0)";
+        text.style.opacity = "1";
+        label.textContent = "Click para ocultar";
+        text.setAttribute("data-hidden", "false");
+      } else {
+        text.style.filter = "blur(3px)";
+        text.style.opacity = "0.4";
+        label.textContent = "Click para leer";
+        text.setAttribute("data-hidden", "true");
+      }
+    }
+
+    // Inicialmente que se vean un poquito borrosas
+    document.querySelectorAll(".secret-text").forEach(function(p) {
+      p.style.filter = "blur(3px)";
+      p.style.opacity = "0.4";
+    });
+
+    // Mini juego
+    let heartsLeft = 0;
+    function startGame() {
+      const area = document.getElementById("heartsArea");
+      const message = document.getElementById("gameMessage");
+      area.innerHTML = "";
+      message.textContent = "";
+      heartsLeft = 7;
+
+      for (let i = 0; i < heartsLeft; i++) {
+        const heart = document.createElement("div");
+        heart.className = "game-heart";
+        heart.addEventListener("click", function () {
+          heart.style.opacity = "0.1";
+          heart.style.pointerEvents = "none";
+          heartsLeft--;
+          if (heartsLeft === 0) {
+            message.textContent = "Mensaje desbloqueado: me alegra tanto compartir esta vida contigo. 💛";
+          }
+        });
+        area.appendChild(heart);
+      }
+    }
+  </script>
 </body>
 </html>
